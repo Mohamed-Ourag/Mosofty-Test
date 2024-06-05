@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" >
+  <button mat-icon-button (click)="mydrower.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="flex:auto;padding:10px"></span>
+  <button mat-button routerLink="/admin/home">Home</button>
+  <button mat-button routerLink="/admin/produits">Products</button>
+  <button mat-button>Admin</button>
+  <button mat-raised-button color="accent" routerLink="/login" >Logout</button>
+</mat-toolbar>
+<mat-drawer-container>
+  <mat-drawer #mydrower opened="true" mode="side" position="start">
+    <mat-list>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/mostProductAdd">
+          <mat-icon>dashboard</mat-icon>
+          Most Product add
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/mostUsersAddProducts">
+          <mat-icon>dashboard</mat-icon>
+          Most Users add Products
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height: 600px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
